@@ -1,0 +1,74 @@
+0 SIL nothing
+1 take_bowl bowl
+2 pour_cereals cereal
+3 pour_milk milk
+4 stir_cereals bowl
+5 take_cup cup
+6 pour_coffee kettle
+7 pour_sugar cup
+8 spoon_sugar cup
+9 stir_coffee cup
+10 pour_oil pan
+11 crack_egg egg
+12 fry_egg pan
+13 put_egg2plate egg
+14 take_plate plate
+15 add_saltnpepper pan
+16 take_eggs egg
+17 butter_pan butter
+18 cut_orange fruit
+19 take_squeezer squeezer
+20 squeeze_orange squeezer
+21 pour_juice squeezer
+22 take_glass cup
+23 take_knife knife
+24 spoon_powder cocoa
+25 stir_milk cup
+26 spoon_flour flour
+27 stir_dough bowl
+28 pour_dough2pan pan
+29 fry_pancake pan
+30 put_pancake2plate pancake
+31 pour_flour flour
+32 cut_fruit fruit
+33 put_fruit2bowl fruit
+34 peel_fruit fruit
+35 stir_fruit bowl
+36 cut_bun bread
+37 take_butter butter
+38 smear_butter knife
+39 take_topping topping
+40 put_toppingOnTop topping
+41 put_bunTogether bread
+42 stir_egg bowl
+43 pour_egg2pan pan
+44 stirfry_egg pan
+45 add_teabag teabag
+46 pour_water kettle
+47 stir_tea cup
+
+
+####Objects#######       
+
+0 bowl                    
+1 cereal                 
+2 milk                    
+3 cup                     
+4 kettle                  
+5 pan                    
+6 egg                     
+7 plate                   
+8 butter                  
+9 fruit                   
+10 knife                  
+11 squeezer               
+12 cocoa                  
+13 pancake               
+14 bread                  
+15 topping                
+16 teabag                 
+17 flour                  
+18 X                      
+
+
+
