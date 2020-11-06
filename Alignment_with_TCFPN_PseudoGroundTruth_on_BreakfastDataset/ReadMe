@@ -1,0 +1,80 @@
+Main Software Requirements:
+tensorflow version: 1.13
+keras version: 2.2.4
+Python version 3
+Ubuntu 16
+********************************************Note: As mentioned below, 4 videos of the Breakfast dataset are removed for all our experiments due to wrong annotations.************************************
+
+
+
+********************************************************************************************************************
+Instructions to reproduce the results denoted as "ours/[8] pg" on Table 1, for the Breakfast dataset.
+These results were obtaiend using TCFPN pseudo ground-truth (pg) for "alignment":
+********************************************************************************************************************
+
+######Data Preparation#########
+0-0- Download the breakfast dataset from http://serre-lab.clps.brown.edu/resource/breakfast-actions-dataset/
+0-1- The data used in the code is Frame-based precomputed reduced FV (64 dim): breakfast_data.tar.gz (~1GB) and Coarse segmentation information: segmentation_coarse.tar.gz
+###############################
+1- Make sure all feature files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "features". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+2- Make sure all label files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "labels". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+3- Make sure 'action_object_list.txt' is in the same directory as the other .py files
+4- Type the following command in terminal: python main.py
+
+
+
+
+**************************************************************************************************************************************************************************************
+Instructions to reproduce our results using TCFPN pseudo ground-truth (pg) for "alignment" on the Breakfast dataset [ablation study-different step granularity](Table 4 in the paper):
+**************************************************************************************************************************************************************************************
+
+######Data Preparation#########
+0-0- Download the breakfast dataset from http://serre-lab.clps.brown.edu/resource/breakfast-actions-dataset/
+0-1- The data used in the code is Frame-based precomputed reduced FV (64 dim): breakfast_data.tar.gz (~1GB) and Coarse segmentation information: segmentation_coarse.tar.gz
+###############################
+1- Make sure all feature files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "features". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+2- Make sure all label files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "labels". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+3- Make sure 'action_object_list.txt' is in the same directory as the other .py files
+4- Change the last argument (in string) correspondingly when calling the function "FindStep4AtomicActions" used in lines~318-319 for each case:
+    -Maximum: 'maximum'
+    -Mean:'average'
+    -Median:'median' for action2step_map and 'mid-median' for action2bin_map
+    -Fixed Steps: 'static', also in  BeamSearch.py, line~287, replace the below line with: proposed_length=5*j+3
+        proposed_length = action2step_map[action2atomic_action[action_candidates[a]]] * j + min(3, action2step_map[action2atomic_action[action_candidates[a]]])
+5- Type the following command in terminal: python main.py
+
+
+
+
+*****************************************************************************************************************************************************************
+Instructions to reproduce our results using TCFPN pseudo ground-truth (pg) for "alignment" on the Breakfast dataset [poisson length model](Table 3 in the paper):
+*****************************************************************************************************************************************************************
+
+######Data Preparation#########
+0-0- Download the breakfast dataset from http://serre-lab.clps.brown.edu/resource/breakfast-actions-dataset/
+0-1- The data used in the code is Frame-based precomputed reduced FV (64 dim): breakfast_data.tar.gz (~1GB) and Coarse segmentation information: segmentation_coarse.tar.gz
+###############################
+1- Make sure all feature files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "features". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+2- Make sure all label files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "labels". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+3- Make sure 'action_object_list.txt' is in the same directory as the other .py files
+4- In main.py, line~345, uncomment: beam_alg=BeamSearch_Poisson(zeta_,beta_,lambda_)
+5- In main.py, line~346, comment: beam_alg = BeamSearch(zeta_,beta_,lambda_)
+6- In main.py, line~349,uncomment LAtuples = beam_alg.search(...,gamma)
+7- In main.py, line~350,comment LAtuples = beam_alg.search(...)
+8- Type the following command in terminal: python main.py
+
+
+****************************************************************************************************************************************************************************************
+Instructions to reproduce our results using TCFPN pseudo ground-truth (pg) for "alignment" on the Breakfast dataset[ contribution of selector network components](Table 5 in the paper):
+****************************************************************************************************************************************************************************************
+
+######Data Preparation#########
+0-0- Download the breakfast dataset from http://serre-lab.clps.brown.edu/resource/breakfast-actions-dataset/
+0-1- The data used in the code is Frame-based precomputed reduced FV (64 dim): breakfast_data.tar.gz (~1GB) and Coarse segmentation information: segmentation_coarse.tar.gz
+###############################
+1- Make sure all feature files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "features". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+2- Make sure all label files (.txt), that were downloaded from the breakfast dataset, are stored in one folder named : "labels". Make this folder a subfolder of the directory where our .py files are stored. Delete the files for the following four videos:1-P34_cam01_P34_friedegg, 2-P51_webcam01_P51_coffee, 3- P52_stereo01_P52_sandwich, 4-P54_cam01_P54_pancake
+3- Make sure 'action_object_list.txt' is in the same directory as the other .py files
+4- Change zeta_, beta_ and lambda_ in main.py in lines~27-29, 
+5- In order to see the effect of the verb/object selector networks, in addition to step 4, do the following:   In LengthModule.py, line~603, remove the obj_cost or base_cost term from the overall cost.
+6- Type the following command in terminal: python main.py
