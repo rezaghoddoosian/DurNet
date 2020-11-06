@@ -3,7 +3,8 @@ tensorflow version: 1.13
 keras version: 2.2.4
 Python version 3
 Ubuntu 16
-********************************************Note: As mentioned below, 4 videos of the Breakfast dataset are removed for all our experiments due to wrong annotations.************************************
+
+Note: As mentioned below, 4 videos of the Breakfast dataset are removed for all our experiments due to wrong annotations.
 
 
 
