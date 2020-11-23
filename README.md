@@ -1,6 +1,9 @@
 # DurNet
 ## Action Duration Prediction for Segment-Level Alignment of Weakly-Labeled Videos
 
+Here is the code for our WACV 2021 accepted paper :
+https://arxiv.org/pdf/2011.10190.pdf
+
 Here we describe the content of the folder:
 
 ### Alignment_with_TCFPN_PseudoGroundTruth_on_BreakfastDataset: 
