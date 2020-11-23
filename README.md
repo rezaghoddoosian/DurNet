@@ -14,4 +14,4 @@ This folder contains all the neccessary codes and files to reproduce the results
 
 
 
-For more questions,please contact the first author of the associated paper - Reza Ghoddoosian (reza.ghoddoosian@mavs.uta.edu).
+For more questions, please contact the first author of the associated paper - Reza Ghoddoosian (reza.ghoddoosian@mavs.uta.edu).
