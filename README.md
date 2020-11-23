@@ -1,5 +1,5 @@
 # DurNet
-## Action Duration Prediction for Segment-Level Alignment of Weakly-LabeledVideos
+## Action Duration Prediction for Segment-Level Alignment of Weakly-Labeled Videos
 
 Here we describe the content of the folder:
 
