@@ -13,3 +13,5 @@ This folder contains all the neccessary codes and files to reproduce the results
 	-action2object.txt: specifies the corresponding main object of each main action. It also lists the indices for all objects. 
 
 
+
+For more questions,please contact the first author of the associated paper - Reza Ghoddoosian (reza.ghoddoosian@mavs.uta.edu).
